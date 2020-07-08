@@ -71,4 +71,20 @@ public class Node {
         }
     }
     
+    public Node returnKthToLastElement(int k) {
+        Node p1 = this;
+        Node p2 = this;
+        
+        for(int i = 0; i < k; i++){
+            if (p1 == null) return null;
+            p1 = p1.next;
+        }
+        
+        while(p1 != null){
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+        return p2;
+    }
+    
 }

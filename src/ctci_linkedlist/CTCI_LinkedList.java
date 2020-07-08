@@ -20,21 +20,22 @@ public class CTCI_LinkedList {
     public static void main(String[] args) {
         // TODO code application logic here
         Node head = new Node(5);
-        head.appendToTail(4);
-        head.appendToTail(5);
         head.appendToTail(6);
         head.appendToTail(7);
+        head.appendToTail(8);
+        head.appendToTail(9);
         head.appendToTail(6);
 
         int choice = 0;
         //choice = new Integer();
-        while (choice != 4) {
+        while (choice != 5) {
             System.out.println("\n Please enter your choice");
             System.out.println("\n"
                     + "1. Print Linked List."
                     + "2. Remove Duplicates."
                     + "3. Remove Duplicates Without Using any Buffer."
-                    + "4. Exit");
+                    + "4. Return Kth To Last Element"
+                    + "5. Exit");
             Scanner scanner = new Scanner(System.in);
             choice = scanner.nextInt();
             switch (choice) {
@@ -48,6 +49,10 @@ public class CTCI_LinkedList {
                     head.removeDuplicatesWithoutBuffer();
                     break;
                 case 4:
+                    Node kthNode = head.returnKthToLastElement(3);
+                    System.out.println("\n Kth To Last Element:" + kthNode.data);
+                    break;
+                case 5:
                     exit(0);
             }
         }
