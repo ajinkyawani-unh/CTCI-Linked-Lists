@@ -25,17 +25,20 @@ public class CTCI_LinkedList {
         head.appendToTail(8);
         head.appendToTail(9);
         head.appendToTail(6);
+        
+        //Scanner input = new Scanner(System.in);
 
         int choice = 0;
         //choice = new Integer();
-        while (choice != 5) {
+        while (choice != 6) {
             System.out.println("\n Please enter your choice");
             System.out.println("\n"
                     + "1. Print Linked List."
                     + "2. Remove Duplicates."
                     + "3. Remove Duplicates Without Using any Buffer."
-                    + "4. Return Kth To Last Element"
-                    + "5. Exit");
+                    + "4. Return Kth To Last Element."
+                    + "5. Partition the List."
+                    + "6. Exit");
             Scanner scanner = new Scanner(System.in);
             choice = scanner.nextInt();
             switch (choice) {
@@ -56,6 +59,12 @@ public class CTCI_LinkedList {
                     System.out.println("\n Kth To Last Element:" + kthNode.data);
                     break;
                 case 5:
+                    System.out.println("\nEnter the partition value.");
+                    Scanner partitionInput = new Scanner(System.in);
+                    int partitionValue = partitionInput.nextInt();
+                    head = head.partitionList(partitionValue);
+                    break;
+                case 6:
                     exit(0);
             }
         }

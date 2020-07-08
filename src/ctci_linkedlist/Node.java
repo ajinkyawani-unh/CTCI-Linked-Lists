@@ -87,4 +87,24 @@ public class Node {
         return p2;
     }
     
+    public Node partitionList(int value) {
+        Node head = this;
+        Node tail = this;
+        Node node = this;
+        
+        while(node != null){
+            Node next = node.next;
+            if(node.data < value){
+                node.next = head;
+                head = node;
+            }
+            else {
+                tail.next = node;
+                tail = node;
+            }
+            node = next;
+        }
+        tail.next = null;
+        return head;
+    }
 }
