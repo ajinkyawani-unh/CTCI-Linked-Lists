@@ -49,7 +49,10 @@ public class CTCI_LinkedList {
                     head.removeDuplicatesWithoutBuffer();
                     break;
                 case 4:
-                    Node kthNode = head.returnKthToLastElement(3);
+                    System.out.println("\nEnter index of the Kth to last element to find out.");
+                    Scanner input = new Scanner(System.in);
+                    int index = input.nextInt();
+                    Node kthNode = head.returnKthToLastElement(index);
                     System.out.println("\n Kth To Last Element:" + kthNode.data);
                     break;
                 case 5:
