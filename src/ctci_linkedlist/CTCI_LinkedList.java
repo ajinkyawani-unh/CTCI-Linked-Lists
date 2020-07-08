@@ -34,11 +34,11 @@ public class CTCI_LinkedList {
             System.out.println("\n Please enter your choice");
             System.out.println("\n"
                     + "1. Print Linked List."
-                    + "2. Remove Duplicates."
-                    + "3. Remove Duplicates Without Using any Buffer."
-                    + "4. Return Kth To Last Element."
-                    + "5. Partition the List."
-                    + "6. Exit");
+                    + "\n2. Remove Duplicates."
+                    + "\n3. Remove Duplicates Without Using any Buffer."
+                    + "\n4. Return Kth To Last Element."
+                    + "\n5. Partition the List."
+                    + "\n6. Exit");
             Scanner scanner = new Scanner(System.in);
             choice = scanner.nextInt();
             switch (choice) {
