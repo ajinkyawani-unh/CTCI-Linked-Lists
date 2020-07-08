@@ -30,7 +30,7 @@ public class CTCI_LinkedList {
 
         int choice = 0;
         //choice = new Integer();
-        while (choice != 6) {
+        while (choice != 7) {
             System.out.println("\n Please enter your choice");
             System.out.println("\n"
                     + "1. Print Linked List."
@@ -38,7 +38,8 @@ public class CTCI_LinkedList {
                     + "\n3. Remove Duplicates Without Using any Buffer."
                     + "\n4. Return Kth To Last Element."
                     + "\n5. Partition the List."
-                    + "\n6. Exit");
+                    + "\n6. Sum of Two Linked Lists."
+                    + "\n7. Exit");
             Scanner scanner = new Scanner(System.in);
             choice = scanner.nextInt();
             switch (choice) {
@@ -65,6 +66,15 @@ public class CTCI_LinkedList {
                     head = head.partitionList(partitionValue);
                     break;
                 case 6:
+                    Node list1 = new Node(7);
+                    list1.appendToTail(1);
+                    list1.appendToTail(6);
+                    Node list2 = new Node(5);
+                    list2.appendToTail(9);
+                    list2.appendToTail(2);
+                    Node result = list1.sumTwoLists(list1, list2);
+                    result.printLinkedList();
+                case 7:
                     exit(0);
             }
         }

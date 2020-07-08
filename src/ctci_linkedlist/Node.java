@@ -107,4 +107,30 @@ public class Node {
         tail.next = null;
         return head;
     }
+    
+    public Node sumTwoLists(Node list1, Node list2){
+        Node resultNodeHead = null;
+        int multiplier = 1;
+        int list1Num = 0;
+        int list2Num = 0;
+        while(list1 != null){
+            list1Num = list1Num + list1.data * multiplier;
+            list2Num = list2Num + list2.data * multiplier;
+            list1 = list1.next;
+            list2 = list2.next;
+            multiplier = multiplier * 10;
+        }
+        int sum = list1Num + list2Num;
+        
+        for(int i = 0; i < 3; i++){
+            int data = sum % 10;
+            sum = sum / 10;
+            if (resultNodeHead == null)
+                resultNodeHead = new Node(data);
+            else
+                resultNodeHead.appendToTail(data);
+        }
+        
+        return resultNodeHead;
+    }
 }
