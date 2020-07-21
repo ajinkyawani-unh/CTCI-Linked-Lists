@@ -108,7 +108,7 @@ public class Node {
         return head;
     }
     
-    public Node sumTwoLists(Node list1, Node list2){
+    public Node sumTwoLists(Node list1, Node list2) {
         Node resultNodeHead = null;
         int multiplier = 1;
         int list1Num = 0;
@@ -130,7 +130,33 @@ public class Node {
             else
                 resultNodeHead.appendToTail(data);
         }
-        
         return resultNodeHead;
     }
+    
+    public Node reverseList(Node list){
+        Node head = null;
+        while(list != null){
+            Node n = new Node(list.data);
+            n.next = head;
+            head = n;
+            list = list.next;        
+        }
+        return head;
+    }
+    
+    public boolean ifPalindrome(Node list1, Node list2){
+        if(list1 != null && list2!= null){
+            while(list1 != null){
+                if(list1.data != list2.data)
+                    return false;
+                list1 = list1.next;
+                list2 = list2.next;
+            }
+        }
+        else
+            return list1 == null && list2 == null;
+        return true;
+    }
+    
+    
 }

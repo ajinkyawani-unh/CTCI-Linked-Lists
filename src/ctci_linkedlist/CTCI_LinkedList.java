@@ -30,7 +30,7 @@ public class CTCI_LinkedList {
 
         int choice = 0;
         //choice = new Integer();
-        while (choice != 7) {
+        while (choice != 8) {
             System.out.println("\n Please enter your choice");
             System.out.println("\n"
                     + "1. Print Linked List."
@@ -38,8 +38,9 @@ public class CTCI_LinkedList {
                     + "\n3. Remove Duplicates Without Using any Buffer."
                     + "\n4. Return Kth To Last Element."
                     + "\n5. Partition the List."
-                    + "\n6. Sum of Two Linked Lists."
-                    + "\n7. Exit");
+                    + "\n6. Sum of Two Linked Lists Where Digits Stored in Reverse Order."
+                    + "\n7. Check if the list is palindrome."
+                    + "\n8. Exit");
             Scanner scanner = new Scanner(System.in);
             choice = scanner.nextInt();
             switch (choice) {
@@ -74,7 +75,21 @@ public class CTCI_LinkedList {
                     list2.appendToTail(2);
                     Node result = list1.sumTwoLists(list1, list2);
                     result.printLinkedList();
-                case 7:
+                    break;
+                case 7: 
+                    Node checkPalindromeList = new Node(5);
+                    checkPalindromeList.appendToTail(4);
+                    checkPalindromeList.appendToTail(3);
+                    checkPalindromeList.appendToTail(4);
+                    checkPalindromeList.appendToTail(6);
+                    Node reversedPalindromeList = checkPalindromeList.reverseList(checkPalindromeList);
+                    boolean isPalindrome = checkPalindromeList.ifPalindrome(checkPalindromeList, reversedPalindromeList);
+                    if (isPalindrome)
+                        System.out.println("The list is Palindrome");
+                    else
+                        System.out.println("The list is not Palindrome");
+                    break;
+                case 8:
                     exit(0);
             }
         }
